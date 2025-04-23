@@ -28,5 +28,11 @@ loginpage.isElementsPresent();
 public void vaidate_title_is(String string) {
 	Assert.assertTrue((loginpage.getTitle()).equalsIgnoreCase(string));
 }
+
+@When("Click on Elements")
+public void click_on_elements() {
+   loginpage.clickElement();
+}
+
 	
 }
