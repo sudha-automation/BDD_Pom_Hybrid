@@ -1,7 +1,10 @@
 package com.stepdefinition;
 
-import org.junit.Assert;
+import java.util.List;
+import java.util.Map;
 
+//import org.assertj.core.api.SoftAssertions;
+import org.junit.Assert;
 import com.pages.ElementsPage;
 import com.qa.factory.DriverFactory;
 
@@ -10,29 +13,40 @@ import io.cucumber.java.en.When;
 
 public class ElementsSteps {
 	 private ElementsPage Elementspage = new ElementsPage(DriverFactory.getDriver());
-	
+	 //SoftAssertions softassert = new SoftAssertions();
 
 @When("User click on Web Tables")
 public void user_click_on_web_tables() {
+	//softassert.assertThat(false);
+	System.out.println("print statement after Soft Assert fails");
  Elementspage.WTClick();
+ //softassert.assertAll();
 }
 
 @When("user validate text Web Tables")
 public void user_validate_text_web_tables() {
+	//Assert.assertTrue(false);
+	//System.out.println("print statement after Hard Assert fails");
     Assert.assertTrue(Elementspage.validateWTheader());
     
 }
 
 @Then("User reads email address for the following users")
 public void user_reads_email_address_for_the_following_users(io.cucumber.datatable.DataTable dataTable) {
-    // Write code here that turns the phrase above into concrete actions
-    // For automatic transformation, change DataTable to one of
-    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-    // Double, Byte, Short, Long, BigInteger or BigDecimal.
-    //
-    // For other transformations you can register a DataTableType.
-    throw new io.cucumber.java.PendingException();
+//using List fr data table
+	/*
+	for (List<String> e:datatableAsList) {
+		System.out.println(e);
+		for(String s:e) {
+			System.out.println("separated "+s);
+		}*/
+	//Using Map for data table
+	
+	List<Map<String,String>> data = dataTable.asMaps();
+	for(Map<String,String> m:data) {
+		System.out.println(m.get("User"));
+		System.out.println(m.get("email"));
+	}
 }	
 
 

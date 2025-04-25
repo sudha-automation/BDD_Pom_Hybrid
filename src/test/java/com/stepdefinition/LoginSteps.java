@@ -2,6 +2,8 @@ package com.stepdefinition;
 
 import static org.junit.Assert.*;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 
 import com.pages.LoginPage;
@@ -17,6 +19,7 @@ public class LoginSteps {
 @Given("user is in login")
 public void user_is_in_login() {
    DriverFactory.getDriver().get("https://demoqa.com");
+   DriverFactory.getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 }
 
 @When("Validate element")
@@ -34,5 +37,10 @@ public void click_on_elements() {
    loginpage.clickElement();
 }
 
+@When("Click on Elements Header")
+public void click_on_elements_header() {
+	   loginpage.clickElement();
+
+}
 	
 }

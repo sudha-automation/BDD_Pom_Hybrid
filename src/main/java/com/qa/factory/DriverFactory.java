@@ -19,10 +19,11 @@ public class DriverFactory {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver()) ;
 			}
-		else if(browser.equalsIgnoreCase("safari")) {
+/*		else if(browser.equalsIgnoreCase("safari")) {
 			WebDriverManager.safaridriver().setup();
 			tlDriver.set(new SafariDriver()) ;
 			}
+*/
 		else {
 			System.out.println("please pass correct browser"+browser);
 		}

@@ -33,6 +33,7 @@ public class Hooks {
 		String browsername = prop.getProperty("browser");
 		driverfactory = new DriverFactory();
 		driver = driverfactory.initDriver(browsername);
+		driver.get("https://demoqa.com");
 	}
 	@After(order = 0)
 	public void QuitBrowser() {

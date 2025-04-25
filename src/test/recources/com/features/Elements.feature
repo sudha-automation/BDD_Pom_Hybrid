@@ -19,18 +19,18 @@
 @tag
 Feature: Title of your feature
   I want to use this template for my feature file
-Background:
- Scenario: Launch
-    Given user is in login
-    When Click on Elements
-    Then vaidate title is "DEMOQA" 
+#Background:
+ #Scenario: Launch
+    #Given user is in login
+        #Then vaidate title is "DEMOQA" 
  
    @tag2
   Scenario: Get the Email Address based on name
+    When Click on Elements Header
     When User click on Web Tables
     And user validate text Web Tables
     Then User reads email address for the following users
-    |User|
-    |Cierra|
-    |Alden|
-    |Kierra| 
+    |User|email|
+    |Cierra|cierra@example.com|
+    |Alden|Alden@example.com|
+    |Kierra|kierra@example.com| 
